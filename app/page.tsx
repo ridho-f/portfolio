@@ -10,18 +10,14 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/project-card";
-import { SkillBadge } from "@/components/skill-badge";
 import { Timeline } from "@/components/timeline";
 import { ContactForm } from "@/components/contact-form";
-import { CreativeHero } from "@/components/creative-hero";
 import { FloatingNav } from "@/components/floating-nav";
 import { MouseFollower } from "@/components/mouse-follower";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { SectionHeading } from "@/components/section-heading";
 import { GlassmorphicCard } from "@/components/glassmorphic-card";
 import { GrindSection } from "@/components/grind-section";
-import { KnowledgeBrain } from "@/components/knowledge-brain";
-import { Marquee } from "@/components/magicui/marquee";
 import { ECGProjectCard } from "@/components/ECGProjectCard";
 import { LearnNavbar } from "@/components/learn-navbar";
 import TextType from "@/components/TextType";
@@ -34,6 +30,10 @@ import {
   SiNextdotjs,
   SiTypescript,
   SiTailwindcss,
+  SiMikrotik,
+  SiVmware,
+  SiProxmox,
+  SiLaravel,
 } from "react-icons/si";
 
 const techLogos = [
@@ -41,11 +41,6 @@ const techLogos = [
     node: <SiReact />,
     title: "React",
     href: "https://react.dev",
-  },
-  {
-    node: <SiNextdotjs />,
-    title: "Next.js",
-    href: "https://nextjs.org",
   },
   {
     node: <SiTypescript />,
@@ -56,6 +51,26 @@ const techLogos = [
     node: <SiTailwindcss />,
     title: "Tailwind CSS",
     href: "https://tailwindcss.com",
+  },
+  {
+    node: <SiMikrotik />,
+    title: "MikroTik",
+    href: "https://mikrotik.com",
+  },
+  {
+    node: <SiLaravel />,
+    title: "Laravel",
+    href: "https://laravel.com",
+  },
+  {
+    node: <SiVmware />,
+    title: "VMware",
+    href: "https://www.vmware.com",
+  },
+  {
+    node: <SiProxmox />,
+    title: "Proxmox",
+    href: "https://www.proxmox.com",
   },
 ];
 
@@ -117,6 +132,7 @@ export default function Portfolio() {
             description="A Full Stack Developer with frontend experience in HTML5, CSS3, JavaScript, Bootstrap, and Blade templating, and backend skills in PHP (Laravel), with database knowledge in MySQL and PostgreSQL. Also familiar with network configuration, including routing, VLANs, VPNs, tunneling, and managing Linux servers and VPS environments.."
             githubUrl="https"
             linkedinUrl="https://www.linkedin.com/in/ridha-f"
+            instagramUrl="https://instagram.com/ridhof_1"
             email="ridho_site@icloud.com"
           />
         </div>
@@ -149,26 +165,6 @@ export default function Portfolio() {
         className="py-32 relative"
       >
         <div className="absolute inset-0 z-0">
-          <LogoLoop
-            logos={techLogos}
-            speed={100}
-            direction="left"
-            logoHeight={60}
-            gap={60}
-            hoverSpeed={0}
-            scaleOnHover
-            ariaLabel="Technology partners"
-          />
-          <LogoLoop
-            logos={techLogos}
-            speed={100}
-            direction="right"
-            logoHeight={60}
-            gap={60}
-            hoverSpeed={0}
-            scaleOnHover
-            ariaLabel="Technology partners"
-          />
           <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-phthalo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
@@ -182,6 +178,26 @@ export default function Portfolio() {
           {/* Desktop: Two horizontal rows */}
           <div className="hidden md:block mt-16">
             <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+              <LogoLoop
+                logos={techLogos}
+                speed={100}
+                direction="left"
+                logoHeight={60}
+                gap={60}
+                hoverSpeed={0}
+                scaleOnHover
+                ariaLabel="Technology partners"
+              />
+              <LogoLoop
+                logos={techLogos}
+                speed={100}
+                direction="right"
+                logoHeight={60}
+                gap={60}
+                hoverSpeed={0}
+                scaleOnHover
+                ariaLabel="Technology partners"
+              />
               <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-zinc-900"></div>
               <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-zinc-900"></div>
             </div>
@@ -189,65 +205,27 @@ export default function Portfolio() {
 
           {/* Mobile: Two vertical columns */}
           <div className="md:hidden mt-16">
-            <div className="relative flex h-[500px] w-full flex-row items-center justify-center overflow-hidden">
-              <Marquee
-                pauseOnHover
-                vertical
-                className="[--duration:20s]"
-              >
-                <SkillBadge
-                  name="Python"
-                  level={100}
-                />
-                <SkillBadge name="R" level={95} />
-                <SkillBadge
-                  name="SQL"
-                  level={100}
-                />
-                <SkillBadge
-                  name="Tableau"
-                  level={95}
-                />
-                <SkillBadge
-                  name="TensorFlow"
-                  level={90}
-                />
-                <SkillBadge
-                  name="PyTorch"
-                  level={90}
-                />
-              </Marquee>
-              <Marquee
-                reverse
-                pauseOnHover
-                vertical
-                className="[--duration:20s]"
-              >
-                <SkillBadge
-                  name="Scikit-learn"
-                  level={95}
-                />
-                <SkillBadge
-                  name="Excel/VBA"
-                  level={90}
-                />
-                <SkillBadge
-                  name="Power BI"
-                  level={85}
-                />
-                <SkillBadge
-                  name="Next.js"
-                  level={85}
-                />
-                <SkillBadge
-                  name="TypeScript"
-                  level={80}
-                />
-                <SkillBadge
-                  name="Git"
-                  level={90}
-                />
-              </Marquee>
+            <div className="relative flex h-[500px] w-full flex-row items-center justify-center overflow-hidden gap-10">
+              <LogoLoop
+                logos={techLogos}
+                speed={100}
+                direction="up"
+                logoHeight={60}
+                gap={60}
+                hoverSpeed={0}
+                scaleOnHover
+                ariaLabel="Technology partners"
+              />
+              <LogoLoop
+                logos={techLogos}
+                speed={100}
+                direction="down"
+                logoHeight={60}
+                gap={60}
+                hoverSpeed={0}
+                scaleOnHover
+                ariaLabel="Technology partners"
+              />
               <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-zinc-900"></div>
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-zinc-900"></div>
             </div>
@@ -421,7 +399,7 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section
+      {/* <section
         id="contact"
         className="py-32 relative"
       >
@@ -504,7 +482,7 @@ export default function Portfolio() {
             <ContactForm />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Learn CTA Section */}
       <section className="py-32 relative">
@@ -559,7 +537,7 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-zinc-800 py-12">
+      {/* <footer className="border-t border-zinc-800 py-12">
         <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <Link
@@ -625,7 +603,7 @@ export default function Portfolio() {
             </Link>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }

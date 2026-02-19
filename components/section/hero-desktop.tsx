@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   Github,
   Linkedin,
+  Instagram,
   Mail,
   ArrowRight,
 } from "lucide-react";
@@ -18,6 +19,7 @@ interface HeroSectionProps {
   description: string;
   githubUrl: string;
   linkedinUrl: string;
+  instagramUrl: string;
   email: string;
 }
 
@@ -27,6 +29,7 @@ export default function HeroSectionDesktop({
   description,
   githubUrl,
   linkedinUrl,
+  instagramUrl,
   email,
 }: HeroSectionProps) {
   return (
@@ -120,6 +123,19 @@ export default function HeroSectionDesktop({
               className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
             >
               <Linkedin className="h-5 w-5" />
+            </Button>
+          </Link>
+
+          <Link
+            href={instagramUrl}
+            target="_blank"
+          >
+            <Button
+              variant="ghost"
+              size="icon"
+              className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+            >
+              <Instagram className="h-5 w-5" />
             </Button>
           </Link>
 
