@@ -10,6 +10,7 @@ import {
 import { Button } from "@/components/ui/button";
 import TextType from "@/components/TextType";
 import { CreativeHero } from "@/components/creative-hero";
+import GradientText from "../GradientText";
 
 interface HeroMobileProps {
   name: string;
@@ -33,21 +34,41 @@ export default function HeroMobile({
   return (
     <div className="lg:hidden flex flex-col items-center text-center space-y-8">
       {/* 1. Name */}
-      <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
-        <span className="block">Hi, I'm</span>
+      {/* 1. Name */}
+      <h1 className="text-4xl sm:text-5xl font-bold tracking-tight flex flex-col items-center">
+        <span className="block">
+          <GradientText
+            colors={[
+              "#00F5A0", // neon green
+              "#FF00C8", // neon pink
+              "#7B2FF7", // electric purple
+            ]}
+            animationSpeed={5}
+            showBorder={false}
+            direction="horizontal"
+            pauseOnHover={true}
+            className="!mx-0 !p-1"
+          >
+            Hello, I'm
+          </GradientText>
+        </span>
 
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-phthalo-400 to-phthalo-600">
-          <TextType
-            text={[name, ...roles]}
-            typingSpeed={75}
-            pauseDuration={1500}
-            showCursor
-            cursorCharacter="_"
-            deletingSpeed={50}
-            variableSpeedMin={60}
-            variableSpeedMax={120}
-            cursorBlinkDuration={0.5}
-          />
+        {/* Wrapper TextType dengan flex-col */}
+        <span className="flex flex-col items-center w-full mt-2">
+          <span className="inline-block text-center bg-gradient-to-r from-phthalo-400 to-phthalo-600 bg-clip-text [-webkit-background-clip:text] text-transparent">
+            <TextType
+              text={[name, ...roles]}
+              typingSpeed={75}
+              pauseDuration={1500}
+              showCursor
+              cursorCharacter="|"
+              deletingSpeed={50}
+              variableSpeedEnabled={false}
+              variableSpeedMin={60}
+              variableSpeedMax={120}
+              cursorBlinkDuration={0.5}
+            />
+          </span>
         </span>
       </h1>
 
