@@ -55,7 +55,7 @@ export default function WorkEducationSection({
   return (
     <section
       id="resume"
-      className="py-32 relative"
+      className="py-10 relative"
     >
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-phthalo-600 rounded-full mix-blend-multiply blur-[120px] opacity-10"></div>
