@@ -79,7 +79,7 @@ const SkillsSection = () => {
           <div className="relative flex w-full flex-col items-center justify-center overflow-hidden py-10">
             <LogoLoop
               logos={techLogos}
-              speed={100}
+              speed={70}
               direction="left"
               logoHeight={60}
               gap={60}
@@ -89,7 +89,7 @@ const SkillsSection = () => {
             />
             <LogoLoop
               logos={techLogos}
-              speed={100}
+              speed={70}
               direction="right"
               logoHeight={60}
               gap={60}
@@ -97,19 +97,15 @@ const SkillsSection = () => {
               scaleOnHover
               ariaLabel="Technology partners row 2"
             />
-
-            {/* Side Fading Gradients */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-zinc-900"></div>
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-zinc-900"></div>
           </div>
         </div>
 
         {/* Mobile View: Vertical Infinite Loops */}
-        <div className="md:hidden">
+        <div className="md:hidden mt-10">
           <div className="relative flex h-[500px] w-full flex-row items-center justify-center overflow-hidden gap-8">
             <LogoLoop
               logos={techLogos}
-              speed={100}
+              speed={70}
               direction="up"
               logoHeight={50}
               gap={50}
@@ -119,7 +115,7 @@ const SkillsSection = () => {
             />
             <LogoLoop
               logos={techLogos}
-              speed={100}
+              speed={70}
               direction="down"
               logoHeight={50}
               gap={50}
@@ -129,8 +125,8 @@ const SkillsSection = () => {
             />
 
             {/* Top & Bottom Fading Gradients */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-zinc-900"></div>
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-zinc-900"></div>
+            {/* <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-zinc-900"></div>
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-zinc-900"></div> */}
           </div>
         </div>
       </div>

@@ -12,6 +12,7 @@ import TextType from "@/components/TextType";
 import { CreativeHero } from "@/components/creative-hero";
 import GradientText from "../GradientText";
 import ScrollReveal from "../ScrollReveal";
+import { getCdnUrl } from "@/lib/utils";
 
 interface HeroMobileProps {
   name: string;
@@ -75,7 +76,16 @@ export default function HeroMobile({
 
       {/* 2. Profile Image */}
       <div className="flex justify-center">
-        <CreativeHero photoUrl="/ridho.png" />
+        <CreativeHero
+          photoUrl={getCdnUrl(
+            "public/ridho-photo-1.webp",
+            {
+              width: 720,
+              quality: 70,
+              format: "webp",
+            },
+          )}
+        />
       </div>
 
       {/* 3. Badge */}
@@ -89,9 +99,16 @@ export default function HeroMobile({
       </div>
 
       {/* 4. Description */}
-      <p className="text-lg text-zinc-400 max-w-[600px] text-justify">
+
+      <ScrollReveal
+        baseOpacity={0.1}
+        enableBlur
+        baseRotation={3}
+        blurStrength={4}
+        textClassName="max-w-auto px-4 !text-base text-zinc-400 text-justify"
+      >
         {description}
-      </p>
+      </ScrollReveal>
 
       {/* 5. Buttons */}
       <div className="flex flex-wrap gap-4 pt-4 justify-center">
