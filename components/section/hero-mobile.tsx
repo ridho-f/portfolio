@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import TextType from "@/components/TextType";
 import { CreativeHero } from "@/components/creative-hero";
 import GradientText from "../GradientText";
+import ScrollReveal from "../ScrollReveal";
 
 interface HeroMobileProps {
   name: string;
@@ -88,7 +89,7 @@ export default function HeroMobile({
       </div>
 
       {/* 4. Description */}
-      <p className="text-lg text-zinc-400 max-w-[600px]">
+      <p className="text-lg text-zinc-400 max-w-[600px] text-justify">
         {description}
       </p>
 

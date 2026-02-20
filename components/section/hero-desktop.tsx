@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import TextType from "@/components/TextType";
 import { CreativeHero } from "@/components/creative-hero";
 import GradientText from "../GradientText";
+import { getCdnUrl } from "@/lib/utils";
 
 interface HeroSectionProps {
   name: string;
@@ -152,7 +153,16 @@ export default function HeroSectionDesktop({
       </div>
 
       <div className="flex justify-center">
-        <CreativeHero photoUrl="/ridho.png" />
+        <CreativeHero
+          photoUrl={getCdnUrl(
+            "public/ridho.png",
+            {
+              width: 720,
+              quality: 70,
+              format: "webp",
+            },
+          )}
+        />
       </div>
     </div>
   );
