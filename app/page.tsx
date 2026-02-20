@@ -24,59 +24,17 @@ import TextType from "@/components/TextType";
 import HeroSectionDesktop from "@/components/section/hero-desktop";
 import HeroMobile from "@/components/section/hero-mobile";
 import AboutSection from "@/components/section/about-section";
-import { LogoLoop } from "@/components/LogoLoop";
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiMikrotik,
-  SiVmware,
-  SiProxmox,
-  SiLaravel,
-} from "react-icons/si";
-
+import SkillsSection from "@/components/section/skill-section";
+import WorkEducationSection from "@/components/section/work-education-section";
+import { getItemsFromFolder } from "@/lib/mdx";
 import { cdnUrl, getCdnUrl } from "@/lib/utils";
 
-const techLogos = [
-  {
-    node: <SiReact />,
-    title: "React",
-    href: "https://react.dev",
-  },
-  {
-    node: <SiTypescript />,
-    title: "TypeScript",
-    href: "https://www.typescriptlang.org",
-  },
-  {
-    node: <SiTailwindcss />,
-    title: "Tailwind CSS",
-    href: "https://tailwindcss.com",
-  },
-  {
-    node: <SiMikrotik />,
-    title: "MikroTik",
-    href: "https://mikrotik.com",
-  },
-  {
-    node: <SiLaravel />,
-    title: "Laravel",
-    href: "https://laravel.com",
-  },
-  {
-    node: <SiVmware />,
-    title: "VMware",
-    href: "https://www.vmware.com",
-  },
-  {
-    node: <SiProxmox />,
-    title: "Proxmox",
-    href: "https://www.proxmox.com",
-  },
-];
-
 export default function Portfolio() {
+  const experiences = getItemsFromFolder(
+    "experiences",
+  );
+  const education =
+    getItemsFromFolder("education");
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden">
       <MouseFollower />
@@ -146,80 +104,12 @@ export default function Portfolio() {
           "I focus on engineering solutions that are efficient, maintainable, and production-ready.",
         ]}
       />
+      <SkillsSection />
 
-      {/* Skills Section */}
-      <section
-        id="skills"
-        className="py-32 relative"
-      >
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-phthalo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-        </div>
-
-        <div className="container relative z-10 mt-10">
-          <SectionHeading
-            title="My Skills"
-            subtitle="Technologies I work with"
-          />
-
-          {/* Desktop: Two horizontal rows */}
-          <div className="hidden md:block mt-16">
-            <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-              <LogoLoop
-                logos={techLogos}
-                speed={100}
-                direction="left"
-                logoHeight={60}
-                gap={60}
-                hoverSpeed={0}
-                scaleOnHover
-                ariaLabel="Technology partners"
-              />
-              <LogoLoop
-                logos={techLogos}
-                speed={100}
-                direction="right"
-                logoHeight={60}
-                gap={60}
-                hoverSpeed={0}
-                scaleOnHover
-                ariaLabel="Technology partners"
-              />
-              <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-zinc-900"></div>
-              <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-zinc-900"></div>
-            </div>
-          </div>
-
-          {/* Mobile: Two vertical columns */}
-          <div className="md:hidden mt-16">
-            <div className="relative flex h-[500px] w-full flex-row items-center justify-center overflow-hidden gap-10">
-              <LogoLoop
-                logos={techLogos}
-                speed={100}
-                direction="up"
-                logoHeight={60}
-                gap={60}
-                hoverSpeed={0}
-                scaleOnHover
-                ariaLabel="Technology partners"
-              />
-              <LogoLoop
-                logos={techLogos}
-                speed={100}
-                direction="down"
-                logoHeight={60}
-                gap={60}
-                hoverSpeed={0}
-                scaleOnHover
-                ariaLabel="Technology partners"
-              />
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-zinc-900"></div>
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-zinc-900"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WorkEducationSection
+        experiences={experiences}
+        education={education}
+      />
 
       {/* Projects Section */}
       <section

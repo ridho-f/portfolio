@@ -4,7 +4,6 @@ import Image from "next/image";
 import { SectionHeading } from "@/components/section-heading";
 import { GlassmorphicCard } from "@/components/glassmorphic-card";
 import { cdnUrl } from "@/lib/utils";
-import ScrollReveal from "@/components/ScrollReveal";
 
 interface AboutSectionProps {
   name: string;
@@ -69,15 +68,12 @@ export default function AboutSection({
             <GlassmorphicCard>
               {description.map(
                 (paragraph, index) => (
-                  <ScrollReveal
-                    baseOpacity={0.3}
-                    enableBlur
-                    baseRotation={0}
-                    blurStrength={4}
-                    textClassName="!text-lg"
+                  <p
+                    key={index}
+                    className={`text-lg text-zinc-300 ${index !== 0 ? "mt-4" : ""}`}
                   >
                     {paragraph}
-                  </ScrollReveal>
+                  </p>
                 ),
               )}
 
@@ -89,6 +85,15 @@ export default function AboutSection({
                   </div>
                   <div className="font-medium">
                     {name}
+                  </div>
+                </div>
+
+                <div className="space-y-1">
+                  <div className="text-sm text-zinc-500">
+                    Nickname
+                  </div>
+                  <div className="font-medium">
+                    Ridho
                   </div>
                 </div>
 
