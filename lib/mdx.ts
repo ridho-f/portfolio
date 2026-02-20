@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { cdnUrl } from "@/lib/utils"; // Import fungsi cdnUrl milikmu
+import { cdnUrl } from "@/lib/utils";
+import { getCdnUrl } from "@/lib/utils";
 
 export function getItemsFromFolder(
   folderName: string,
@@ -32,10 +33,17 @@ export function getItemsFromFolder(
       organization:
         data.institution || data.company,
       startDate: data.start_date,
+      type: data.type,
       date: `${data.start_date} - ${data.end_date || "Present"}`,
       location: data.location,
       gpa: data.GPA || null,
-      logo: data.logo ? cdnUrl(data.logo) : null,
+      logo: data.logo
+        ? getCdnUrl(data.logo, {
+            width: 90,
+            quality: 75,
+            format: "webp",
+          })
+        : null,
       description: content.trim(),
     };
   });

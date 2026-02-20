@@ -23,10 +23,7 @@ export default function AboutSection({
   description,
 }: AboutSectionProps) {
   return (
-    <section
-      id="about"
-      className="py-32 relative"
-    >
+    <section id="about" className=" relative">
       {/* Background Glow */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-phthalo-600 rounded-full mix-blend-multiply blur-3xl opacity-10"></div>

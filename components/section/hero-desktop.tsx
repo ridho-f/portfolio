@@ -155,7 +155,7 @@ export default function HeroSectionDesktop({
       <div className="flex justify-center">
         <CreativeHero
           photoUrl={getCdnUrl(
-            "public/ridho.png",
+            "public/ridho-photo-1.webp",
             {
               width: 720,
               quality: 70,
