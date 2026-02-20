@@ -36,6 +36,8 @@ import {
   SiLaravel,
 } from "react-icons/si";
 
+import { cdnUrl, getCdnUrl } from "@/lib/utils";
+
 const techLogos = [
   {
     node: <SiReact />,
@@ -71,25 +73,6 @@ const techLogos = [
     node: <SiProxmox />,
     title: "Proxmox",
     href: "https://www.proxmox.com",
-  },
-];
-
-// Alternative with image sources
-const imageLogos = [
-  {
-    src: "/logos/company1.png",
-    alt: "Company 1",
-    href: "https://company1.com",
-  },
-  {
-    src: "/logos/company2.png",
-    alt: "Company 2",
-    href: "https://company2.com",
-  },
-  {
-    src: "/logos/company3.png",
-    alt: "Company 3",
-    href: "https://company3.com",
   },
 ];
 
@@ -149,9 +132,14 @@ export default function Portfolio() {
         name="Muhanmmad Ridha Fatahillah"
         email="ridhofatahillah78@gmail.com"
         location="Indonesia"
-        availability="Available for freelance & full-time"
-        imageSrc="/ridho.png"
-        resumeUrl="/RidhoResume.pdf"
+        imageSrc={getCdnUrl("public/ridho.png", {
+          width: 640,
+          quality: 75,
+          format: "webp",
+        })}
+        resumeUrl={cdnUrl(
+          "public/resume/resume-muhammad-ridha-fatahillah.pdf",
+        )}
         description={[
           "I am a Full Stack Developer and Network Engineer passionate about building scalable systems.",
           "My expertise spans Laravel, Next.js, React, database architecture, and network infrastructure.",

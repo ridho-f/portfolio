@@ -3,12 +3,13 @@
 import Image from "next/image";
 import { SectionHeading } from "@/components/section-heading";
 import { GlassmorphicCard } from "@/components/glassmorphic-card";
+import { cdnUrl } from "@/lib/utils";
+import ScrollReveal from "@/components/ScrollReveal";
 
 interface AboutSectionProps {
   name: string;
   email: string;
   location: string;
-  availability: string;
   imageSrc: string;
   resumeUrl: string;
   description: string[];
@@ -18,7 +19,6 @@ export default function AboutSection({
   name,
   email,
   location,
-  availability,
   imageSrc,
   resumeUrl,
   description,
@@ -50,7 +50,7 @@ export default function AboutSection({
                 src={imageSrc}
                 alt={name}
                 fill
-                className="object-cover"
+                className="object-cover object-[50%_30%]"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -58,9 +58,7 @@ export default function AboutSection({
               <div className="absolute bottom-0 left-0 w-full p-6">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                  <span className="text-sm font-medium">
-                    {availability}
-                  </span>
+                  <span className="text-sm font-medium"></span>
                 </div>
               </div>
             </div>
@@ -71,12 +69,15 @@ export default function AboutSection({
             <GlassmorphicCard>
               {description.map(
                 (paragraph, index) => (
-                  <p
-                    key={index}
-                    className={`text-lg text-zinc-300 ${index !== 0 ? "mt-4" : ""}`}
+                  <ScrollReveal
+                    baseOpacity={0.3}
+                    enableBlur
+                    baseRotation={0}
+                    blurStrength={4}
+                    textClassName="!text-lg"
                   >
                     {paragraph}
-                  </p>
+                  </ScrollReveal>
                 ),
               )}
 
@@ -106,15 +107,6 @@ export default function AboutSection({
                   </div>
                   <div className="font-medium">
                     {location}
-                  </div>
-                </div>
-
-                <div className="space-y-1">
-                  <div className="text-sm text-zinc-500">
-                    Availability
-                  </div>
-                  <div className="font-medium text-green-500">
-                    {availability}
                   </div>
                 </div>
               </div>
