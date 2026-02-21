@@ -34,7 +34,7 @@ export default function HeroMobile({
   email,
 }: HeroMobileProps) {
   return (
-    <div className="lg:hidden flex flex-col items-center text-center space-y-8">
+    <div className="lg:hidden flex flex-col items-center text-center space-y-8 px-20">
       {/* 1. Name */}
       {/* 1. Name */}
       <h1 className="text-4xl sm:text-5xl font-bold tracking-tight flex flex-col items-center">
@@ -100,21 +100,15 @@ export default function HeroMobile({
 
       {/* 4. Description */}
 
-      <ScrollReveal
-        baseOpacity={0.1}
-        enableBlur
-        baseRotation={3}
-        blurStrength={4}
-        textClassName="max-w-auto px-4 !text-base text-zinc-400 text-justify"
-      >
+      <p className="text-xl text-justify dark:text-zinc-300 text-zinc-900 max-w-[600px] p-5">
         {description}
-      </ScrollReveal>
+      </p>
 
       {/* 5. Buttons */}
       <div className="flex flex-wrap gap-4 pt-4 justify-center">
         <Link href="#projects">
           <Button className="relative overflow-hidden group bg-gradient-to-r from-phthalo-600 to-phthalo-800 border-0">
-            <span className="relative z-10 flex items-center">
+            <span className="relative z-10 flex items-center text-zinc-200 hover:text-white ">
               View Projects
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </span>
@@ -125,7 +119,7 @@ export default function HeroMobile({
         <Link href="#contact">
           <Button
             variant="outline"
-            className="border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-500 bg-transparent"
+            className="border-zinc-700 dark:text-zinc-200 hover:text-white text-zinc-950 hover:border-zinc-500 bg-transparent"
           >
             Contact Me
           </Button>
@@ -133,7 +127,7 @@ export default function HeroMobile({
       </div>
 
       {/* 6. Social Icons */}
-      <div className="flex gap-4 justify-center">
+      <div className="flex gap-4 justify-center pb-7">
         <Link href={githubUrl} target="_blank">
           <Button
             variant="ghost"

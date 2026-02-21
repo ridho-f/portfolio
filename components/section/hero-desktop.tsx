@@ -62,8 +62,11 @@ export default function HeroSectionDesktop({
           >
             Hi, I'm
           </GradientText>
-
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-phthalo-400 to-phthalo-600">
+          <span
+            className="bg-clip-text text-transparent bg-gradient-to-r 
+  from-phthalo-500 to-phthalo-700 
+  dark:from-phthalo-300 dark:to-phthalo-500"
+          >
             <TextType
               text={[name, ...roles]}
               typingSpeed={75}
@@ -78,7 +81,7 @@ export default function HeroSectionDesktop({
           </span>
         </h1>
 
-        <p className="text-xl text-justify text-zinc-400 max-w-[600px]">
+        <p className="text-xl text-justify dark:text-white text-zinc-900 max-w-[600px]">
           {description}
         </p>
 
@@ -108,7 +111,7 @@ export default function HeroSectionDesktop({
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+              className="rounded-full bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-900 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700 dark:hover:text-zinc-50"
             >
               <Github className="h-5 w-5" />
             </Button>
@@ -121,7 +124,7 @@ export default function HeroSectionDesktop({
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+              className="rounded-full bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-900 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700 dark:hover:text-zinc-50"
             >
               <Linkedin className="h-5 w-5" />
             </Button>
@@ -134,7 +137,7 @@ export default function HeroSectionDesktop({
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+              className="rounded-full bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-900 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700 dark:hover:text-zinc-50"
             >
               <Instagram className="h-5 w-5" />
             </Button>
@@ -144,7 +147,7 @@ export default function HeroSectionDesktop({
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+              className="rounded-full bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-900 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700 dark:hover:text-zinc-50"
             >
               <Mail className="h-5 w-5" />
             </Button>

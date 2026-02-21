@@ -156,12 +156,12 @@ body {
 
 
 /* Fix slider colors */
-[data-radix-collection-item] {
+.dark [data-radix-collection-item] {
   background: #1a1a1a !important;
 }
 
-.slider-track,
-[role="slider"] ~ span {
+.dark .slider-track,
+.dark [role="slider"] ~ span {
   background: #27272a !important;
 }
 
@@ -171,19 +171,19 @@ body {
 }
 
 /* Fix autofill styling */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus,
+.dark input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px #18181b inset !important;
   -webkit-text-fill-color: #ffffff !important;
   transition: background-color 5000s ease-in-out 0s;
 }
 
 /* For Firefox */
-input:-moz-autofill,
-input:-moz-autofill:hover,
-input:-moz-autofill:focus {
+.dark input:-moz-autofill,
+.dark input:-moz-autofill:hover,
+.dark input:-moz-autofill:focus {
   box-shadow: 0 0 0 30px #18181b inset !important;
   color: #ffffff !important;
 }
@@ -198,7 +198,6 @@ html, body {
 /* Ensure full coverage on small screens */
 body {
   min-height: 100vh;
-  background: #18181b; /* zinc-900 fallback */
 }
 
 /* Constrain blobs on very small screens */
@@ -240,36 +239,36 @@ body {
 }
 
 /* Admin login input fix */
-input[type="email"],
-input[type="password"] {
+.dark input[type="email"],
+.dark input[type="password"] {
   color: white !important;
 }
 
-input[type="email"]::placeholder,
-input[type="password"]::placeholder {
+.dark input[type="email"]::placeholder,
+.dark input[type="password"]::placeholder {
   color: #71717a !important;
 }
 
 /* Fix Select dropdown styling */
-[role="listbox"],
-[data-radix-select-content] {
+.dark [role="listbox"],
+.dark [data-radix-select-content] {
   background-color: #18181b !important;
   border: 1px solid #3f3f46 !important;
 }
 
-[role="option"],
-[data-radix-select-item] {
+.dark [role="option"],
+.dark [data-radix-select-item] {
   color: #e4e4e7 !important;
   background-color: transparent !important;
 }
 
-[role="option"]:hover,
-[data-radix-select-item]:hover {
+.dark [role="option"]:hover,
+.dark [data-radix-select-item]:hover {
   background-color: #27272a !important;
   color: white !important;
 }
 
-[data-radix-select-item][data-highlighted] {
+.dark [data-radix-select-item][data-highlighted] {
   background-color: #27272a !important;
   color: white !important;
 }
@@ -279,13 +278,13 @@ input[type="password"]::placeholder {
   outline: none !important;
 }
 
-.recharts-default-tooltip {
+.dark .recharts-default-tooltip {
   background-color: #18181b !important;
   border: 1px solid #3f3f46 !important;
   border-radius: 8px !important;
 }
 
-.recharts-tooltip-label,
-.recharts-tooltip-item {
+.dark .recharts-tooltip-label,
+.dark .recharts-tooltip-item {
   color: #e4e4e7 !important;
 }

@@ -74,12 +74,12 @@ export default function WorkEducationSection({
               <div className="p-2 rounded-lg bg-phthalo-500/10 text-phthalo-500">
                 <Briefcase size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-white">
+              <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">
                 Work Experience
               </h3>
             </div>
 
-            <div className="space-y-6 border-l-2 border-zinc-800 ml-4 pl-8 relative">
+            <div className="space-y-6 border-l-2 border-zinc-200 dark:border-zinc-800 ml-4 pl-8 relative">
               {experiences.map((item, index) => {
                 const isExpanded =
                   expandedExperience === index;
@@ -88,7 +88,7 @@ export default function WorkEducationSection({
                     key={index}
                     className="relative"
                   >
-                    <div className="absolute -left-[41px] top-1.5 w-4 h-4 rounded-full bg-zinc-900 border-2 border-phthalo-500 shadow-[0_0_8px_rgba(20,184,166,0.5)]"></div>
+                    <div className="absolute -left-[41px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-zinc-900 border-2 border-phthalo-500 shadow-[0_0_8px_rgba(20,184,166,0.5)]"></div>
 
                     <div
                       onClick={() =>
@@ -106,7 +106,7 @@ export default function WorkEducationSection({
                       >
                         <div className="flex gap-4">
                           {item.logo && (
-                            <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 rounded-lg overflow-hidden border border-zinc-800 bg-zinc-900/50 flex items-center justify-center">
+                            <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 flex items-center justify-center">
                               <Image
                                 src={item.logo}
                                 alt={
@@ -121,24 +121,24 @@ export default function WorkEducationSection({
 
                           <div className="flex-1">
                             <div className="flex flex-wrap items-baseline justify-between gap-2">
-                              <h4 className="text-lg font-bold text-white group-hover:text-phthalo-400 transition-colors">
+                              <h4 className="text-lg font-bold text-zinc-900 dark:text-white group-hover:text-phthalo-600 dark:group-hover:text-phthalo-400 transition-colors">
                                 {item.title}
                               </h4>
                               <div className="flex items-center gap-2">
-                                <span className="px-2 py-0.5 rounded text-[10px] font-bold tracking-widest bg-zinc-800 text-phthalo-400 border border-zinc-700">
+                                <span className="px-2 py-0.5 rounded text-[10px] font-bold tracking-widest bg-zinc-100 dark:bg-zinc-800 text-phthalo-600 dark:text-phthalo-400 border border-zinc-200 dark:border-zinc-700">
                                   {item.type}
                                 </span>
                                 <ChevronDown
                                   className={cn(
                                     "w-4 h-4 text-zinc-500 transition-transform duration-300",
                                     isExpanded &&
-                                      "rotate-180 text-phthalo-400",
+                                      "rotate-180 text-phthalo-600 dark:text-phthalo-400",
                                   )}
                                 />
                               </div>
                             </div>
 
-                            <p className="text-phthalo-400 text-sm font-medium mb-2">
+                            <p className="text-phthalo-600 dark:text-phthalo-400 text-sm font-medium mb-2">
                               {item.organization}
                             </p>
                             <div className="flex items-center gap-2 text-zinc-500 text-xs mb-1">
@@ -160,7 +160,7 @@ export default function WorkEducationSection({
                               )}
                             >
                               <div className="overflow-hidden">
-                                <p className="text-zinc-400 text-justify text-sm leading-relaxed whitespace-pre-line border-t border-zinc-800/50">
+                                <p className="text-zinc-600 dark:text-zinc-400 text-justify text-sm leading-relaxed whitespace-pre-line border-t border-zinc-200/50 dark:border-zinc-800/50">
                                   {
                                     item.description
                                   }
@@ -183,12 +183,12 @@ export default function WorkEducationSection({
               <div className="p-2 rounded-lg bg-phthalo-500/10 text-phthalo-500">
                 <GraduationCap size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-white">
+              <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">
                 Education
               </h3>
             </div>
 
-            <div className="space-y-6 border-l-2 border-zinc-800 ml-4 pl-8 relative">
+            <div className="space-y-6 border-l-2 border-zinc-200 dark:border-zinc-800 ml-4 pl-8 relative">
               {education.map((item, index) => {
                 const isExpanded =
                   expandedEducation === index;
@@ -197,7 +197,7 @@ export default function WorkEducationSection({
                     key={index}
                     className="relative"
                   >
-                    <div className="absolute -left-[41px] top-1.5 w-4 h-4 rounded-full bg-zinc-900 border-2 border-phthalo-500 shadow-[0_0_8px_rgba(20,184,166,0.5)]"></div>
+                    <div className="absolute -left-[41px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-zinc-900 border-2 border-phthalo-500 shadow-[0_0_8px_rgba(20,184,166,0.5)]"></div>
 
                     <div
                       onClick={() =>
@@ -215,7 +215,7 @@ export default function WorkEducationSection({
                       >
                         <div className="flex gap-4">
                           {item.logo && (
-                            <div className="relative w-12 h-12 rounded-lg overflow-hidden border border-zinc-800 flex-shrink-0">
+                            <div className="relative w-12 h-12 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800 flex-shrink-0">
                               <Image
                                 src={item.logo}
                                 alt={
@@ -229,18 +229,18 @@ export default function WorkEducationSection({
 
                           <div className="flex-1">
                             <div className="flex justify-between items-start">
-                              <h4 className="text-lg font-bold text-white group-hover:text-phthalo-400 transition-colors">
+                              <h4 className="text-lg font-bold text-zinc-900 dark:text-white group-hover:text-phthalo-600 dark:group-hover:text-phthalo-400 transition-colors">
                                 {item.title}
                               </h4>
                               <ChevronDown
                                 className={cn(
                                   "w-4 h-4 text-zinc-500 transition-transform duration-300",
                                   isExpanded &&
-                                    "rotate-180 text-phthalo-400",
+                                    "rotate-180 text-phthalo-600 dark:text-phthalo-400",
                                 )}
                               />
                             </div>
-                            <p className="text-phthalo-400 text-sm font-medium mb-1">
+                            <p className="text-phthalo-600 dark:text-phthalo-400 text-sm font-medium mb-1">
                               {item.organization}
                             </p>
                             {item.gpa && (
@@ -266,7 +266,7 @@ export default function WorkEducationSection({
                               )}
                             >
                               <div className="overflow-hidden">
-                                <p className="text-zinc-400 text-sm leading-relaxed whitespace-pre-line border-t border-zinc-800/50 pt-4">
+                                <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed whitespace-pre-line border-t border-zinc-200/50 dark:border-zinc-800/50 pt-4">
                                   {
                                     item.description
                                   }
