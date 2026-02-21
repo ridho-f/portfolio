@@ -36,7 +36,7 @@ export default function Portfolio() {
   const education =
     getItemsFromFolder("education");
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-zinc-900 dark:via-zinc-900 dark:to-black text-zinc-900 dark:text-white overflow-hidden">
       <MouseFollower />
       <ScrollProgress />
       <FloatingNav />
@@ -387,7 +387,7 @@ export default function Portfolio() {
                   Math?
                 </h3>
 
-                <p className="text-lg text-zinc-300">
+                <p className="text-lg text-zinc-600 dark:text-zinc-300">
                   I'm building courses and
                   mentorship programs on
                   quantitative finance,

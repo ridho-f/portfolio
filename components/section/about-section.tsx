@@ -61,13 +61,13 @@ export default function AboutSection({
           </div>
 
           {/* Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 text-zinc-900 dark:text-white">
             <GlassmorphicCard>
               {description.map(
                 (paragraph, index) => (
                   <p
                     key={index}
-                    className={`text-lg text-zinc-300 ${index !== 0 ? "mt-4" : ""}`}
+                    className={`text-lg  ${index !== 0 ? "mt-4" : ""}`}
                   >
                     {paragraph}
                   </p>
@@ -119,7 +119,7 @@ export default function AboutSection({
                   href={resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-2 rounded-md transition-colors"
+                  className="dark:bg-white dark:text-black bg-zinc-800 hover:bg-zinc-700 text-white px-4 py-2 rounded-md transition-colors"
                 >
                   View Resume
                 </a>

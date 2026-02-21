@@ -17,7 +17,7 @@ export function SectionHeading({ title, subtitle }: SectionHeadingProps) {
         viewport={{ once: true }}
       >
         <div className="inline-block">
-          <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-2">
+          <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-zinc-100 dark:bg-white/10 backdrop-blur-sm border border-zinc-300 dark:border-white/20 mb-2 text-zinc-600 dark:text-white">
             <span className="relative z-10">{subtitle}</span>
             <span className="absolute inset-0 rounded-full bg-gradient-to-r from-phthalo-500/20 to-phthalo-700/20 animate-pulse"></span>
           </div>
@@ -25,7 +25,7 @@ export function SectionHeading({ title, subtitle }: SectionHeadingProps) {
       </motion.div>
 
       <motion.h2
-        className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-300"
+        className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-zinc-800 to-zinc-600 dark:from-white dark:to-zinc-300"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
