@@ -60,6 +60,7 @@ export default function Portfolio() {
             badge="Full Stack Developer | Network Engineer"
             description="A Full Stack Developer with frontend experience in HTML5, CSS3, JavaScript, Bootstrap, and Blade templating, and backend skills in PHP (Laravel), with database knowledge in MySQL and PostgreSQL. Also familiar with network configuration, including routing, VLANs, VPNs, tunneling, and managing Linux servers and VPS environments.."
             githubUrl="https"
+            instagramUrl="https://instagram.com/ridhof_1"
             linkedinUrl="https://www.linkedin.com/in/ridha-f"
             email="ridh@"
           />

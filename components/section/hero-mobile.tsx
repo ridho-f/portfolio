@@ -6,6 +6,7 @@ import {
   Linkedin,
   Mail,
   ArrowRight,
+  Instagram,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TextType from "@/components/TextType";
@@ -19,6 +20,7 @@ interface HeroMobileProps {
   roles: string[];
   badge: string;
   description: string;
+  instagramUrl: string;
   githubUrl: string;
   linkedinUrl: string;
   email: string;
@@ -29,12 +31,13 @@ export default function HeroMobile({
   roles,
   badge,
   description,
+  instagramUrl,
   githubUrl,
   linkedinUrl,
   email,
 }: HeroMobileProps) {
   return (
-    <div className="lg:hidden flex flex-col items-center text-center space-y-8 px-20">
+    <div className="lg:hidden flex flex-col items-center text-center space-y-8 px-5">
       {/* 1. Name */}
       {/* 1. Name */}
       <h1 className="text-4xl sm:text-5xl font-bold tracking-tight flex flex-col items-center">
@@ -100,7 +103,7 @@ export default function HeroMobile({
 
       {/* 4. Description */}
 
-      <p className="text-xl text-justify dark:text-zinc-300 text-zinc-900 max-w-[600px] p-5">
+      <p className="text-xl text-justify dark:text-zinc-300 text-zinc-900 max-w-[600px]">
         {description}
       </p>
 
@@ -132,12 +135,9 @@ export default function HeroMobile({
           <Button
             variant="ghost"
             size="icon"
-            className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+            className="rounded-full bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-900 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700 dark:hover:text-zinc-50"
           >
             <Github className="h-5 w-5" />
-            <span className="sr-only">
-              GitHub
-            </span>
           </Button>
         </Link>
 
@@ -145,12 +145,19 @@ export default function HeroMobile({
           <Button
             variant="ghost"
             size="icon"
-            className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+            className="rounded-full bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-900 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700 dark:hover:text-zinc-50"
           >
             <Linkedin className="h-5 w-5" />
-            <span className="sr-only">
-              LinkedIn
-            </span>
+          </Button>
+        </Link>
+
+        <Link href={instagramUrl} target="_blank">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="rounded-full bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-900 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700 dark:hover:text-zinc-50"
+          >
+            <Instagram className="h-5 w-5" />
           </Button>
         </Link>
 
@@ -158,10 +165,9 @@ export default function HeroMobile({
           <Button
             variant="ghost"
             size="icon"
-            className="rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white"
+            className="rounded-full bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-900 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700 dark:hover:text-zinc-50"
           >
             <Mail className="h-5 w-5" />
-            <span className="sr-only">Email</span>
           </Button>
         </Link>
       </div>
