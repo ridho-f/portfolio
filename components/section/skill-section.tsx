@@ -73,9 +73,9 @@ const SkillsSection = () => {
         ></div>
       </div>
 
-      <div className="container relative z-10 mx-auto px-4">
+      <div className="relative z-10 mx-auto ">
         {/* Desktop View: Horizontal Infinite Loops */}
-        <div className="hidden md:block">
+        <div className="container hidden md:block">
           <div className="relative flex w-full flex-col items-center justify-center overflow-hidden py-10">
             <LogoLoop
               logos={techLogos}
@@ -102,11 +102,11 @@ const SkillsSection = () => {
 
         {/* Mobile View: Vertical Infinite Loops */}
         <div className="md:hidden mt-10">
-          <div className="relative flex h-[500px] w-full flex-row items-center justify-center overflow-hidden gap-8">
+          <div className="relative flex  w-full flex-col items-center justify-center overflow-hidden">
             <LogoLoop
               logos={techLogos}
               speed={70}
-              direction="up"
+              direction="right"
               logoHeight={50}
               gap={50}
               hoverSpeed={0}
@@ -116,7 +116,7 @@ const SkillsSection = () => {
             <LogoLoop
               logos={techLogos}
               speed={70}
-              direction="down"
+              direction="left"
               logoHeight={50}
               gap={50}
               hoverSpeed={0}

@@ -68,9 +68,8 @@ export default function HeroMobile({
               showCursor
               cursorCharacter="|"
               deletingSpeed={50}
-              variableSpeedEnabled={false}
-              variableSpeedMin={60}
-              variableSpeedMax={120}
+              // variableSpeedEnabled={false}
+
               cursorBlinkDuration={0.5}
             />
           </span>

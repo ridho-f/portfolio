@@ -74,8 +74,6 @@ export default function HeroSectionDesktop({
               showCursor
               cursorCharacter="_"
               deletingSpeed={50}
-              variableSpeedMin={60}
-              variableSpeedMax={120}
               cursorBlinkDuration={0.5}
             />
           </span>

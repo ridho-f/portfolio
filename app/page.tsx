@@ -9,7 +9,6 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { ProjectCard } from "@/components/project-card";
 import { Timeline } from "@/components/timeline";
 import { ContactForm } from "@/components/contact-form";
 import { FloatingNav } from "@/components/floating-nav";
@@ -28,6 +27,8 @@ import SkillsSection from "@/components/section/skill-section";
 import WorkEducationSection from "@/components/section/work-education-section";
 import { getItemsFromFolder } from "@/lib/mdx";
 import { cdnUrl, getCdnUrl } from "@/lib/utils";
+import { getProjects } from "@/lib/mdx";
+import ProjectsSection from "@/components/section/project-section";
 
 export default function Portfolio() {
   const experiences = getItemsFromFolder(
@@ -35,6 +36,7 @@ export default function Portfolio() {
   );
   const education =
     getItemsFromFolder("education");
+  const projects = getProjects();
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-zinc-900 dark:via-zinc-900 dark:to-black text-zinc-900 dark:text-white overflow-hidden">
       <MouseFollower />
@@ -113,120 +115,7 @@ export default function Portfolio() {
       />
 
       {/* Projects Section */}
-      <section
-        id="projects"
-        className="py-32 relative"
-      >
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-phthalo-700 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-        </div>
-
-        <div className="container relative z-10">
-          <SectionHeading
-            title="Featured Projects"
-            subtitle="Some of my recent work"
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-            <ECGProjectCard
-              title="ECG Arrhythmia Detector"
-              description="A real-time ECG monitoring application that streams live cardiac data and performs intelligent arrhythmia detection using advanced signal processing algorithms. Tracks PVC burden, detects patterns like bigeminy and trigeminy, and supports session-based analysis with planned alarm functionality for high-risk events."
-              tags={[
-                "Next.js",
-                "TypeScript",
-                "Expo",
-                "Python",
-                "IOS Development",
-              ]}
-              image="/p4.png?height=400&width=600"
-              repoUrl="https://github.com/vimal0156/ECG-Arrhythmia-Detection-IOS-app"
-            />
-
-            <ProjectCard
-              title="Cardinality-Constrained Portfolio Selection"
-              description="A research-style project that solves the mean-variance portfolio optimization problem with a cardinality constraint using integer programming. This model captures the real-world need to limit the number of assets in a portfolio, introducing combinatorial complexity and paving the way for quantum-inspired methods."
-              tags={[
-                "Jupyter",
-                "Python",
-                "NumPy",
-                "CVXPY",
-              ]}
-              image="/portfolio.png"
-              repoUrl="https://github.com/vimal0156/Cardinality-Constrained-Portfolio-Selection"
-            />
-            <ProjectCard
-              title="SOLUSDT signal bot"
-              description="A custom algorithmic trading system for Solana using custom signals, enhanced with BTCUSDT price context for confirmation. The strategy includes dynamic stop-loss, ATR-based take-profit, slippage modeling, and realistic funding/fee handling. Backtested on 5-minute candles with live simulation support. It has been deployed live and generated consistent profit in high freq trading environments."
-              tags={[
-                "Python",
-                "Pandas",
-                "Matplotlib",
-                "Backtesting",
-                "Crypto",
-                "Quant",
-              ]}
-              image="/trade.png"
-            />
-            <ProjectCard
-              title="BlockFinAI"
-              description="BlockFinAI is an advanced application designed for detecting patterns in stock and cryptocurrency charts using deep learning techniques. Inspired by the YOLO Object Recognition Algorithm research, this project implements YOLOv8 and integrates it into a user-friendly Streamlit app. BlockFinAI automates chart pattern recognition to empower traders and analysts."
-              tags={[
-                "Python",
-                "YOLOv8",
-                "Streamlit",
-                "Deep Learning",
-                "Computer Vision",
-              ]}
-              image="/BlockFinAI.png"
-              repoUrl="https://github.com/vimal0156/BlockFinAI"
-            />
-
-            <ProjectCard
-              title="Ruaroa AI"
-              description="Ruaroa AI is your personal ML wizard that conjures complete machine learning pipelines from simple natural language descriptions. Just describe what you want, upload your data, and watch the magic happen! Using advanced AI reasoning and iterative experimentation, it crafts production-ready solutions that would typically require weeks of expert development."
-              tags={[
-                "Python",
-                "Streamlit",
-                "OpenAI",
-                "Machine Learning",
-                "NLP",
-              ]}
-              image="/Ruaroa AI.png"
-              repoUrl="https://github.com/vimal0156/Ruaroa-AI"
-            />
-
-            <ProjectCard
-              title="AlgoStockGPT AI"
-              description="AlgoStockGPT AI is a cutting-edge financial intelligence platform that leverages the power of artificial intelligence to provide comprehensive stock analysis, real-time market insights, and algorithmic trading strategies. Your personal AI financial analyst, providing institutional-grade stock analysis and market intelligence through a seamless, conversational interface."
-              tags={[
-                "Next.js",
-                "OpenAI",
-                "GPT-4",
-                "Financial Analysis",
-                "AI",
-              ]}
-              image="/AlgoStockGPT AI.png"
-              repoUrl="https://github.com/vimal0156/AlgoStockGPT-AI"
-            />
-
-            <ProjectCard
-              title="QuantumTrade Nexus"
-              description="Advanced Trading Intelligence Platform - Comprehensive financial analysis toolkit with 15+ technical indicators, algorithmic strategies, and real-time market intelligence. Features include market scanner, custom signals, advanced trading tools, and trading strategies with backtesting capabilities. Supports multiple data sources including Yahoo Finance and online APIs."
-              tags={[
-                "Python",
-                "Streamlit",
-                "Pandas",
-                "TA-Lib",
-                "Algorithmic Trading",
-                "Technical Analysis",
-              ]}
-              image="/QuantumTrade-Nexus.png"
-              repoUrl="https://github.com/vimal0156/QuantumTrade-Nexus"
-            />
-          </div>
-        </div>
-      </section>
+      <ProjectsSection projects={projects} />
 
       {/* Grind Section */}
       <section
